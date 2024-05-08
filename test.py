@@ -4,6 +4,7 @@ import tensorflow as tf
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt
+import pathlib
 
 train_dir = 'Imagenes/train'
 validation_dir = 'Imagenes/val'
@@ -53,7 +54,7 @@ validation_generator = validation_datagen.flow_from_directory(
     color_mode='grayscale'
 )
 
-NUM_EPOCHS = 100
+NUM_EPOCHS = 50
 history = model.fit(
     train_generator,
     steps_per_epoch=6,
@@ -62,7 +63,24 @@ history = model.fit(
     validation_data=validation_generator
 )
 
-tf.saved_model.save(model, "my_model")
+
+export_dir = "saved_model/model1"
+model.export(export_dir)
+
+converter = tf.lite.TFLiteConverter.from_saved_model(export_dir)
+converter.optimizations = [tf.lite.Optimize.DEFAULT]
+
+def representative_data_gen():
+    for i in range(100):
+        input_value, _ = next(validation_generator)
+        yield [input_value]
+
+converter.representative_dataset = representative_data_gen
+converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]
+
+tflite_model = converter.convert()
+tflite_model_file = pathlib.Path("saved_model/model_original.tflite")
+tflite_model_file.write_bytes(tflite_model)
 
 plt.plot(history.history['accuracy'])
 plt.plot(history.history['val_accuracy'])
