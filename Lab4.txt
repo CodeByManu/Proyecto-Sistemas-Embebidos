@@ -1,0 +1,21 @@
+TASK1: 
+
+Tiempos inferencia:
+
+esp> detect_image 0
+
+bird score:23%, no bird score 77%
+Total inference time: 1611583 us
+Quantization time: 1351 us
+Layer 0 time: 1609537 us
+Response processing time: 665 us
+I (9304) [esp_cli]: Time required for the inference is 1623 ms
+esp> detect_image 1
+
+bird score:19%, no bird score 81%
+Total inference time: 1611501 us
+Quantization time: 1342 us
+Layer 0 time: 1609470 us
+Response processing time: 661 us
+I (73484) [esp_cli]: Time required for the inference is 1623 ms
+esp> 
