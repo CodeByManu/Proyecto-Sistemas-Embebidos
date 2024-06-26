@@ -1,0 +1,53 @@
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc: In function 'void RespondToDetection(float, float)':
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:25:19: error: expected ')' before ';' token
+   25 | #define LED_GPIO 4;
+      |                   ^
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:68:24: note: in expansion of macro 'LED_GPIO'
+   68 |   gpio_pad_select_gpio(LED_GPIO);
+      |                        ^~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:68:23: note: to match this '('
+   68 |   gpio_pad_select_gpio(LED_GPIO);
+      |                       ^
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:68:32: error: expected primary-expression before ')' token
+   68 |   gpio_pad_select_gpio(LED_GPIO);
+      |                                ^
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:25:19: error: expected ')' before ';' token
+   25 | #define LED_GPIO 4;
+      |                   ^
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:69:22: note: in expansion of macro 'LED_GPIO'
+   69 |   gpio_set_direction(LED_GPIO, GPIO_MODE_OUTPUT);
+      |                      ^~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:69:21: note: to match this '('
+   69 |   gpio_set_direction(LED_GPIO, GPIO_MODE_OUTPUT);
+      |                     ^
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:69:30: error: expected primary-expression before ',' token
+   69 |   gpio_set_direction(LED_GPIO, GPIO_MODE_OUTPUT);
+      |                              ^
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:25:19: error: expected ')' before ';' token
+   25 | #define LED_GPIO 4;
+      |                   ^
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:72:20: note: in expansion of macro 'LED_GPIO'
+   72 |     gpio_set_level(LED_GPIO, 1);
+      |                    ^~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:72:19: note: to match this '('
+   72 |     gpio_set_level(LED_GPIO, 1);
+      |                   ^
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:72:28: error: expected primary-expression before ',' token
+   72 |     gpio_set_level(LED_GPIO, 1);
+      |                            ^
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:25:19: error: expected ')' before ';' token
+   25 | #define LED_GPIO 4;
+      |                   ^
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:74:20: note: in expansion of macro 'LED_GPIO'
+   74 |     gpio_set_level(LED_GPIO, 0);
+      |                    ^~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:74:19: note: to match this '('
+   74 |     gpio_set_level(LED_GPIO, 0);
+      |                   ^
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:74:28: error: expected primary-expression before ',' token
+   74 |     gpio_set_level(LED_GPIO, 0);
+      |                            ^
+make[3]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/detection_responder.cc.obj] Error 1
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make[1]: *** [CMakeFiles/flash.dir/rule] Error 2
+make: *** [flash] Error 2

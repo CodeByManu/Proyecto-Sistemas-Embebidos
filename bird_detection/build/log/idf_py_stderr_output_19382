@@ -1,0 +1,61 @@
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc: In function 'void setup_gpio()':
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:30:24: error: invalid conversion from 'int' to 'gpio_num_t' [-fpermissive]
+   30 | #define MOTOR_GPIO_PIN 5
+      |                        ^
+      |                        |
+      |                        int
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:36:18: note: in expansion of macro 'MOTOR_GPIO_PIN'
+   36 |   gpio_reset_pin(MOTOR_GPIO_PIN);
+      |                  ^~~~~~~~~~~~~~
+In file included from /Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:27:
+/Users/usuario/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:82:37: note:   initializing argument 1 of 'esp_err_t gpio_reset_pin(gpio_num_t)'
+   82 | esp_err_t gpio_reset_pin(gpio_num_t gpio_num);
+      |                          ~~~~~~~~~~~^~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:30:24: error: invalid conversion from 'int' to 'gpio_num_t' [-fpermissive]
+   30 | #define MOTOR_GPIO_PIN 5
+      |                        ^
+      |                        |
+      |                        int
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:37:22: note: in expansion of macro 'MOTOR_GPIO_PIN'
+   37 |   gpio_set_direction(MOTOR_GPIO_PIN, GPIO_MODE_OUTPUT);
+      |                      ^~~~~~~~~~~~~~
+/Users/usuario/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:170:41: note:   initializing argument 1 of 'esp_err_t gpio_set_direction(gpio_num_t, gpio_mode_t)'
+  170 | esp_err_t gpio_set_direction(gpio_num_t gpio_num, gpio_mode_t mode);
+      |                              ~~~~~~~~~~~^~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:30:24: error: invalid conversion from 'int' to 'gpio_num_t' [-fpermissive]
+   30 | #define MOTOR_GPIO_PIN 5
+      |                        ^
+      |                        |
+      |                        int
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:38:18: note: in expansion of macro 'MOTOR_GPIO_PIN'
+   38 |   gpio_set_level(MOTOR_GPIO_PIN, 0);
+      |                  ^~~~~~~~~~~~~~
+/Users/usuario/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:141:37: note:   initializing argument 1 of 'esp_err_t gpio_set_level(gpio_num_t, uint32_t)'
+  141 | esp_err_t gpio_set_level(gpio_num_t gpio_num, uint32_t level);
+      |                          ~~~~~~~~~~~^~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc: In function 'void RespondToDetection(float, float)':
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:30:24: error: invalid conversion from 'int' to 'gpio_num_t' [-fpermissive]
+   30 | #define MOTOR_GPIO_PIN 5
+      |                        ^
+      |                        |
+      |                        int
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:82:20: note: in expansion of macro 'MOTOR_GPIO_PIN'
+   82 |     gpio_set_level(MOTOR_GPIO_PIN, 0);
+      |                    ^~~~~~~~~~~~~~
+/Users/usuario/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:141:37: note:   initializing argument 1 of 'esp_err_t gpio_set_level(gpio_num_t, uint32_t)'
+  141 | esp_err_t gpio_set_level(gpio_num_t gpio_num, uint32_t level);
+      |                          ~~~~~~~~~~~^~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:30:24: error: invalid conversion from 'int' to 'gpio_num_t' [-fpermissive]
+   30 | #define MOTOR_GPIO_PIN 5
+      |                        ^
+      |                        |
+      |                        int
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:85:20: note: in expansion of macro 'MOTOR_GPIO_PIN'
+   85 |     gpio_set_level(MOTOR_GPIO_PIN, 1);
+      |                    ^~~~~~~~~~~~~~
+/Users/usuario/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:141:37: note:   initializing argument 1 of 'esp_err_t gpio_set_level(gpio_num_t, uint32_t)'
+  141 | esp_err_t gpio_set_level(gpio_num_t gpio_num, uint32_t level);
+      |                          ~~~~~~~~~~~^~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/detection_responder.cc.obj] Error 1
+make[1]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [all] Error 2

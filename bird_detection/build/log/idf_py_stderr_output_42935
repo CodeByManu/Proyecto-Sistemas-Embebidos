@@ -1,0 +1,12 @@
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc: In function 'void RespondToDetection(float, float)':
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:68:24: error: 'LED_GPIO' was not declared in this scope
+   68 |   gpio_pad_select_gpio(LED_GPIO);
+      |                        ^~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:68:3: error: 'gpio_pad_select_gpio' was not declared in this scope; did you mean 'esp_rom_gpio_pad_select_gpio'?
+   68 |   gpio_pad_select_gpio(LED_GPIO);
+      |   ^~~~~~~~~~~~~~~~~~~~
+      |   esp_rom_gpio_pad_select_gpio
+make[3]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/detection_responder.cc.obj] Error 1
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make[1]: *** [CMakeFiles/flash.dir/rule] Error 2
+make: *** [flash] Error 2

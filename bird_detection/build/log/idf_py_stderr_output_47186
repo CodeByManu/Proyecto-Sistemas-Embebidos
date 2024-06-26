@@ -1,0 +1,17 @@
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc: In function 'void setup()':
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:133:25: error: 'OUTPUT' was not declared in this scope
+  133 |   pinMode(LED_GPIO_PIN, OUTPUT);
+      |                         ^~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:133:3: error: 'pinMode' was not declared in this scope
+  133 |   pinMode(LED_GPIO_PIN, OUTPUT);
+      |   ^~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:134:30: error: 'LOW' was not declared in this scope
+  134 |   digitalWrite(LED_GPIO_PIN, LOW); // Inicialmente apagado
+      |                              ^~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:134:3: error: 'digitalWrite' was not declared in this scope
+  134 |   digitalWrite(LED_GPIO_PIN, LOW); // Inicialmente apagado
+      |   ^~~~~~~~~~~~
+make[3]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/detection_responder.cc.obj] Error 1
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make[1]: *** [CMakeFiles/flash.dir/rule] Error 2
+make: *** [flash] Error 2

@@ -1,0 +1,43 @@
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc: In function 'void RespondToDetection(float, float)':
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:68:3: error: 'gpio_pad_select_gpio' was not declared in this scope; did you mean 'esp_rom_gpio_pad_select_gpio'?
+   68 |   gpio_pad_select_gpio(LED_GPIO);
+      |   ^~~~~~~~~~~~~~~~~~~~
+      |   esp_rom_gpio_pad_select_gpio
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:25:18: error: invalid conversion from 'int' to 'gpio_num_t' [-fpermissive]
+   25 | #define LED_GPIO 4
+      |                  ^
+      |                  |
+      |                  int
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:69:22: note: in expansion of macro 'LED_GPIO'
+   69 |   gpio_set_direction(LED_GPIO, GPIO_MODE_OUTPUT);
+      |                      ^~~~~~~~
+In file included from /Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:24:
+/Users/usuario/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:170:41: note:   initializing argument 1 of 'esp_err_t gpio_set_direction(gpio_num_t, gpio_mode_t)'
+  170 | esp_err_t gpio_set_direction(gpio_num_t gpio_num, gpio_mode_t mode);
+      |                              ~~~~~~~~~~~^~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:25:18: error: invalid conversion from 'int' to 'gpio_num_t' [-fpermissive]
+   25 | #define LED_GPIO 4
+      |                  ^
+      |                  |
+      |                  int
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:72:20: note: in expansion of macro 'LED_GPIO'
+   72 |     gpio_set_level(LED_GPIO, 1);
+      |                    ^~~~~~~~
+/Users/usuario/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:141:37: note:   initializing argument 1 of 'esp_err_t gpio_set_level(gpio_num_t, uint32_t)'
+  141 | esp_err_t gpio_set_level(gpio_num_t gpio_num, uint32_t level);
+      |                          ~~~~~~~~~~~^~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:25:18: error: invalid conversion from 'int' to 'gpio_num_t' [-fpermissive]
+   25 | #define LED_GPIO 4
+      |                  ^
+      |                  |
+      |                  int
+/Users/usuario/esp/projects_tf/person_detection/main/detection_responder.cc:74:20: note: in expansion of macro 'LED_GPIO'
+   74 |     gpio_set_level(LED_GPIO, 0);
+      |                    ^~~~~~~~
+/Users/usuario/esp/idf/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:141:37: note:   initializing argument 1 of 'esp_err_t gpio_set_level(gpio_num_t, uint32_t)'
+  141 | esp_err_t gpio_set_level(gpio_num_t gpio_num, uint32_t level);
+      |                          ~~~~~~~~~~~^~~~~~~~
+make[3]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/detection_responder.cc.obj] Error 1
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make[1]: *** [CMakeFiles/flash.dir/rule] Error 2
+make: *** [flash] Error 2

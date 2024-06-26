@@ -1,0 +1,5 @@
+Partitions tables occupies 24.1MB of flash (25231360 bytes) which does not fit in configured flash size 4MB. Change the flash size in menuconfig under the 'Serial Flasher Config' menu.
+make[2]: *** [partition_table/partition-table.bin] Error 2
+make[1]: *** [esp-idf/partition_table/CMakeFiles/partition_table_bin.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [all] Error 2

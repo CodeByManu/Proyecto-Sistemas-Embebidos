@@ -1,0 +1,49 @@
+In file included from /Users/usuario/esp/projects_tf/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h:19,
+                 from /Users/usuario/esp/projects_tf/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_allocator.h:26,
+                 from /Users/usuario/esp/projects_tf/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:26,
+                 from /Users/usuario/esp/projects_tf/person_detection/main/main_functions.cc:22:
+/Users/usuario/esp/projects_tf/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h: In member function 'T* tflite::BuiltinDataAllocator::AllocatePOD()':
+/Users/usuario/esp/projects_tf/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use 'is_standard_layout && is_trivial' instead [-Wdeprecated-declarations]
+   46 |     static_assert(std::is_pod<T>::value, "Builtin data structure must be POD.");
+      |                        ^~~~~~
+In file included from /Users/usuario/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/bits/stl_pair.h:60,
+                 from /Users/usuario/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/utility:69,
+                 from /Users/usuario/esp/projects_tf/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/c/common.h:1461,
+                 from /Users/usuario/esp/projects_tf/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/c/common.h:31,
+                 from /Users/usuario/esp/projects_tf/person_detection/main/detection_responder.h:22,
+                 from /Users/usuario/esp/projects_tf/person_detection/main/main_functions.cc:18:
+/Users/usuario/esp/idf-tools/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/xtensa-esp-elf/include/c++/13.2.0/type_traits:819:5: note: declared here
+  819 |     is_pod
+      |     ^~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/main_functions.cc: In function 'void setup()':
+/Users/usuario/esp/projects_tf/person_detection/main/main_functions.cc:62:12: error: conflicting declaration 'uint8_t* tensor_arena'
+   62 |   uint8_t *tensor_arena = (uint8_t *)heap_caps_malloc(tensor_arena, MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
+      |            ^~~~~~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/main_functions.cc:61:17: note: previous declaration as 'constexpr const int tensor_arena'
+   61 |   constexpr int tensor_arena = 176720; // Ajusta este tamaño según sea necesario
+      |                 ^~~~~~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/main_functions.cc:74:23: warning: NULL used in arithmetic [-Wpointer-arith]
+   74 |   if (tensor_arena == NULL) {
+      |                       ^~~~
+/Users/usuario/esp/projects_tf/person_detection/main/main_functions.cc:75:18: error: assignment of read-only variable 'tensor_arena'
+   75 |     tensor_arena = (uint8_t *) heap_caps_malloc(kTensorArenaSize, MALLOC_CAP_INTERNAL | MALLOC_CAP_8BIT);
+      |     ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/main_functions.cc:77:23: warning: NULL used in arithmetic [-Wpointer-arith]
+   77 |   if (tensor_arena == NULL) {
+      |                       ^~~~
+/Users/usuario/esp/projects_tf/person_detection/main/main_functions.cc:103:33: error: invalid conversion from 'int' to 'uint8_t*' {aka 'unsigned char*'} [-fpermissive]
+  103 |       model, micro_op_resolver, tensor_arena, kTensorArenaSize);
+      |                                 ^~~~~~~~~~~~
+      |                                 |
+      |                                 int
+/Users/usuario/esp/projects_tf/person_detection/managed_components/espressif__esp-tflite-micro/tensorflow/lite/micro/micro_interpreter.h:51:29: note:   initializing argument 3 of 'tflite::MicroInterpreter::MicroInterpreter(const tflite::Model*, const tflite::MicroOpResolver&, uint8_t*, size_t, tflite::MicroResourceVariables*, tflite::MicroProfilerInterface*, bool)'
+   51 |                    uint8_t* tensor_arena, size_t tensor_arena_size,
+      |                    ~~~~~~~~~^~~~~~~~~~~~
+/Users/usuario/esp/projects_tf/person_detection/main/main_functions.cc: At global scope:
+/Users/usuario/esp/projects_tf/person_detection/main/main_functions.cc:55:17: warning: '{anonymous}::tensor_arena' defined but not used [-Wunused-variable]
+   55 | static uint8_t *tensor_arena;//[kTensorArenaSize]; // Maybe we should move this to external
+      |                 ^~~~~~~~~~~~
+make[3]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/main_functions.cc.obj] Error 1
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make[1]: *** [CMakeFiles/flash.dir/rule] Error 2
+make: *** [flash] Error 2

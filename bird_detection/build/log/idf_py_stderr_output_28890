@@ -1,0 +1,5 @@
+Error: app partition is too small for binary person_detection.bin size 0x20c0d0:
+  - Part 'factory' 0/0 @ 0x10000 size 0x180000 (overflow 0x8c0d0)
+make[2]: *** [esp-idf/esptool_py/CMakeFiles/app_check_size] Error 1
+make[1]: *** [esp-idf/esptool_py/CMakeFiles/app_check_size.dir/all] Error 2
+make: *** [all] Error 2
